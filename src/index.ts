@@ -1,14 +1,15 @@
 window.Webflow ||= [];
 window.Webflow.push(() => {
   
-  const portfolioItem = document.querySelector('[bw-element='portfolio-item']')!;
+  const portfolioItem = document.querySelectorAll('[bw-element='portfolio-item']')!;
 
-  const mediaPlayer = document.querySelector('[bw-element='media-player']')!;
+  const mediaPlayer = document.querySelectorAll('[bw-element='media-player']')!;
 
-  portfolioItem.onmouseenter = function() {
-    mediaPlayer.style.display = flex;
+  const playButton = document.querySelectorAll('[bw-element='play-button']')!;
 
-  };
+  playButton?.addEventListener('click', function handleClick() {
+    mediaPlayer.style.display = 'block';
+  })
 
 });
 
