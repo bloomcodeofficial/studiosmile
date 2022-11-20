@@ -1,7 +1,6 @@
 {
   "extends": "@finsweet/tsconfig",
   "compilerOptions": {
-    "allowJs": true,
     "rootDir": ".",
     "baseUrl": "./",
     "paths": {
