@@ -1,7 +1,20 @@
-document.querySelector('[bw-element='play-button']')?.onclick(function() {
+window.Webflow ||= [];
+window.Webflow.push(() => {
+  
+  const portfolioItem = document.querySelector('[bw-element='portfolio-item']')!;
 
-  document.querySelector('[bw-element='media-player']')?.style.display = 'flex';
+  const mediaPlayer = document.querySelector('[bw-element='media-player']')!;
 
-})
+  portfolioItem.onmouseenter = function() {
+    mediaPlayer.style.display = flex;
+
+  };
+
+});
+
+
+
+
+
 
   
