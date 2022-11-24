@@ -1,7 +1,2 @@
-import { greetUser } from '$utils/greet';
+import { soundwaves } from '$utils/soundwaves';
 
-window.Webflow ||= [];
-window.Webflow.push(() => {
-  const name = 'JohnJHasse';
-  greetUser(name);
-});
