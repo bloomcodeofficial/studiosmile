@@ -1,6 +1,4 @@
-
-
-
+(function() {
 
 
 var video = $("[bw-element='media-player'] video")[0];
@@ -8,7 +6,7 @@ var audio = $("[bw-element='media-player'] audio")[0];
 var file = $("[bw-element='media-player'] video")[0];
 
 
-
+var line_color = '#FACC15';
 
 
 
@@ -167,8 +165,8 @@ var start_visualiser = function(source, canvas_id = 'visualiser-canvas' ) {
         capStyle = 'transparent',
         meterNum = 600 / (10 + 2),
         capYPositionArray = [];
-        ctx = canvas.getContext('2d'),
-        line_color = '#FACC15';
+        ctx = canvas.getContext('2d');
+        
 
     // loop
     function renderFrame() {
@@ -366,7 +364,7 @@ function switchVolumeIcon(volume) {
 
 
 function formatTime(seconds) {
-    minutes = Math.floor(seconds / 60);
+    let minutes = Math.floor(seconds / 60);
     minutes = (minutes >= 10) ? minutes : "0" + minutes;
     seconds = Math.floor(seconds % 60);
     seconds = (seconds >= 10) ? seconds : "0" + seconds;
@@ -375,3 +373,6 @@ function formatTime(seconds) {
 
 
 
+
+
+})();
