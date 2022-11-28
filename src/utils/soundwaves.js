@@ -31,6 +31,7 @@
 
         $(this).find("[bw-element='portfolio-item-video-preview']").css("opacity", "100%");
         $(this).find("[bw-element='portfolio-item-video-preview'] video").attr("src", file_url);
+        $(this).find("[bw-element='portfolio-item-video-preview'] video").trigger("play");
 
     });
 
