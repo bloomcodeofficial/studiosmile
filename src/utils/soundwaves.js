@@ -12,7 +12,7 @@
 
 
     /* when mouse enters embed , play audio and video, video only if category is not TV */
-    $("[bw-element='portfolio-item']").mouseenter(function() {
+    $("[bw-element='portfolio-item']").on( "mouseenter",function() {
 
         $("[bw-element='portfolio-item-video-preview']").css("opacity", "0%");
 
@@ -31,13 +31,16 @@
 
         $(this).find("[bw-element='portfolio-item-video-preview']").css("opacity", "100%");
         $(this).find("[bw-element='portfolio-item-video-preview'] video").attr("src", file_url);
-        $(this).find("[bw-element='portfolio-item-video-preview'] video").trigger("play");
+        setTimeout(function (){
+            $(this).find("[bw-element='portfolio-item-video-preview'] video").get(0).play();
+        }, 100)
+
 
     });
 
 
 
-    $("[bw-element='portfolio-item']").mouseleave(function(e) {
+    $("[bw-element='portfolio-item']").on("mouseleave",function(e) {
         $(".clip").attr("src","");
          $("[bw-element='portfolio-item-video-preview']").css("opacity", "0%");
     });
