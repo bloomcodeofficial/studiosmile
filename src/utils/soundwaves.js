@@ -28,11 +28,12 @@
             return;
         }
 
+        let this_video = $(this).find("[bw-element='portfolio-item-video-preview'] video");
 
         $(this).find("[bw-element='portfolio-item-video-preview']").css("opacity", "100%");
-        $(this).find("[bw-element='portfolio-item-video-preview'] video").attr("src", file_url);
+        $(this_video).attr("src", file_url);
         setTimeout(function (){
-            $(this).find("[bw-element='portfolio-item-video-preview'] video").get(0).play();
+            $(this_video)[0].play();
         }, 100)
 
 
