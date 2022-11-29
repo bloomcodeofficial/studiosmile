@@ -32,9 +32,12 @@
 
         $(this).find("[bw-element='portfolio-item-video-preview']").css("opacity", "100%");
         $(this_video).attr("src", file_url);
+
+
         setTimeout(function (){
+            console.log("HALO 2", $(this_video));
             $(this_video)[0].play();
-        }, 100)
+        }, 100);
 
 
     });
@@ -58,6 +61,7 @@
       let title = $(this).find(" [bw-element='portfolio-item-title']").text().trim();
       let category =  $(this).find("[bw-element='portfolio-item-category']").text().trim().toLowerCase();
 
+      let details = $(this).find(" [bw-element='portfolio-item-details']").html();
 
 
       $("[bw-element='media-player'] audio").hide();
@@ -108,8 +112,15 @@
       }
 
 
-      $("[bw-element='media-player-title']").text(title );
+      $("[bw-element='media-player-title']").text(title.replaceAll(",", ", ") );
+
+      $("[bw-element='media-player-details']").html(details);
+
       $("[bw-element='media-player']").fadeIn();
+
+
+
+
 
       $("body").addClass("overflow-hidden");
 
